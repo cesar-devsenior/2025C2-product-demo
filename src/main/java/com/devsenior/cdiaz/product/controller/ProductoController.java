@@ -15,6 +15,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api/productos")
+@CrossOrigin("http://localhost:4200")
 public class ProductoController {
     
     private final ProductoService productoService;
@@ -64,7 +65,7 @@ public class ProductoController {
      * @param producto Producto a crear
      * @return Producto creado con ID asignado
      */
-    @PostMapping // POST http://locahost:8080/api/productos
+    @PostMapping // POST http://localhost:8080/api/productos
     public ResponseEntity<Producto> createProducto(@RequestBody Producto producto) {
         try {
             Producto productoGuardado = productoService.save(producto);
